@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sladoladiša | <%= title %></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet"> 
+   
+    <link rel="stylesheet" href="/styles.css">
+
+
+</head>
+<body>
+   
+    <%- include('./partials/nav-blog.ejs') %>
+
+    <div class="blogs content">
+        <h2>SVI KOMENTARI</h2>
+    
+        <% if (blogs.length > 0) { %>
+          <% blogs.forEach(blog => { %>
+        <div class="single" id="<%=blog._id%>"> 
+            <h3 class="podaci">
+                <span><strong><%=blog.ime%></strong></span> 
+                <span><%=blog.prezime%></span>
+            </h3>
+            <p class="ukus"><strong>Omiljeni ukus:</strong> <%= blog.ukus %></p>
+            <p class="sadrzaj"><strong>Komentar:</strong><%=blog.body%></p>
+
+            <% let minut = blog.createdAt.getMinutes() %>
+            <% let mesec = blog.createdAt.getMonth() + 1%>
+            <% if(minut < 10) { %>
+            <%  minut = '0' + minut %>
+
+           
+                <% } %>
+            <p> <strong>Vreme:</strong>  <%= blog.createdAt.getHours()%> : <%= minut%> </p> 
+           
+            <p> <strong>Datum:</strong>  <%= blog.createdAt.getDate()%>/<%= blog.createdAt.getMonth() + 1%>/<%= blog.createdAt.getFullYear()%> </p> 
+            <!-- <a class="delete" data-doc="<%=blog._id%>">Obrisi komentar</a> -->
+            <hr>
+        </div>
+          <% }) %>
+        <% } else { %>
+          <p>Trenutno nema komentara...</p>
+        <% } %>
+   
+        
+      </div>
+
+     
+
+    <%- include('./partials/footer.ejs') %>
+
+   
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="/styles.css">
+ 
+</head>
+<body>
+
+    <%- include('./partials/nav-create-blog.ejs') %>
+   
+    <div class="form-div">
+        <form action="/blogs" method="POST">
+            <label for="ime">IME:</label>
+            <input type="text" id="ime" name="ime">
+            <label for="prezime">PREZIME:</label>
+            <input type="text" id="prezime" name="prezime">
+            <label for="ukus">OMILJENI UKUS SLADOLEDA:</label>
+           <select name="ukus" id="ukus">
+               <option disabled selected>UKUSI</option>
+               <option value="vanila">Vanila</option>
+               <option value="čokolada">Čokolada</option>
+               <option value="borovnica">Borovnica</option>
+               <option value="lešnik">Lešnik</option>
+               <option value="karamela">Karamela</option>
+               <option value="pistaći">Pistaći</option>
+               <option value="karamela-orasi">Karamela-orasi</option>
+               <option value="straciatella">straciatella</option>
+               <option value="čoko-badem">Čoko-badem</option>
+               <option value="jagoda">Jagoda</option>
+                          
+           </select>
+            <textarea placeholder="Ostavite komentar..." name="body"></textarea>
+            <button class="postavi">POSTAVI KOMENTAR</button>
+                         
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sladoladiša | <%= title %></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet"> 
+   
+    <link rel="stylesheet" href="./styles.css">
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnQ_Qi4YP9GPqSd-OU9m1oRIS5P1T5j3g&callback=initMap">
+</script>
+
+</head>
+<body>
+    
+    <%- include('./partials/nav.ejs') %>
+
+    
+    <section id="contact">
+        <div id="contact-info">
+           <p>Posetite nas u našim prostorijama i uverite se u kvalitet naših proizvoda</p>
+           <p><strong>Adresa:</strong> Marka Markovića 38</p>
+           <p><strong>Telefon:</strong>(011) 000-000</p>
+           <p><strong>e-mail:</strong><a href="#">nekimail@neki.com</a></p>
+        </div>
+        <div id="map">
+
+        </div>
+    
+    </section>
+
+    <section class="mailing-section">
+        <p>Ukoliko ste zainteresovani da postanete</p>
+       <p>deo naše priče</p>
+        <div id="mailing">
+            <a href="mailto:nekimail@neki.com"><div>KONTAKTIRAJTE NAS</div></a>
+        </div>
+
+    </section>
+
+    <%- include('./partials/footer.ejs') %>
+
+    <script>
+        // Initialize and add the map
+        function initMap() {
+          // The location of Uluru
+          var uluru = {lat: 44.787197, lng: 20.457273};
+          // The map, centered at Uluru
+          var map = new google.maps.Map(
+              document.getElementById('map'), {zoom: 13, center: {lat:44.818920 , lng:20.376820}});
+         
+          var marker = new google.maps.Marker(
+              {position: {lat:44.818920 , lng:20.376820}, 
+             
+                map: map
+              });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: '<p style="font-family:Playball,cursive">Sladoladiša</p>'
+        });
+       
+        infowindow.open(map, marker);
+
+
+
+
+        }
+            </script>
+            <script defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnQ_Qi4YP9GPqSd-OU9m1oRIS5P1T5j3g&callback=initMap">
+          </script>
+</body>
+</html>
