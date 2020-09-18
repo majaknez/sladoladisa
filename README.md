@@ -14,3 +14,32 @@ which are stored in database.
 - Node.js
 - MongoDB
 - templating engine EJS
+
+**short app overview** 
+
+
+|![home page](images/home.png)  | 
+|:--:| 
+| *Home Page* |
+
+
+|![about page](images/about.png)  | 
+|:--:| 
+| *About Page* |
+
+|![contact page](images/contact.png) | 
+|:--:| 
+| *Contact Page* |
+
+
+|![shop page](images/shop.png) | 
+|:--:| 
+| *Shop Page* |
+
+|![funPage page](images/funPage.png) | 
+|:--:| 
+| *Fun Page* |
+
+
+
+
